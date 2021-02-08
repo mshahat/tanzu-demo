@@ -41,29 +41,19 @@ fi
 
 echo ''
 echo 'Continue to login to ArgoCD using "argocd login $ARGOCD_IP --name argocd --username $ARGOCD_USERNAME --password $ARGOCD_PASSWORD --insecure"'
-pe "./argocd login ${ARGOCD_IP} --name argocd --username ${ARGOCD_USERNAME} --password ${ARGOCD_PASSWORD} --insecure"
+pe "argocd login ${ARGOCD_IP} --name argocd --username ${ARGOCD_USERNAME} --password ${ARGOCD_PASSWORD} --insecure"
 
 echo ''
 echo 'Continue to add the DEV_CLUSTER to the ArgoCD cluster configuration...'
 pe "kubectx ${DEV_CLUSTER}"
-pe "./argocd cluster add `kubectx -c`"
-pe "./argocd proj create development"
-pe "./argocd proj add-source development https://github.com/Turbots/tanzu-demo"
-pe "./argocd proj add-source development https://github.com/Turbots/tanzu-demo-gitops"
-pe "./argocd proj add-source development https://charts.bitnami.com/bitnami"
-pe "./argocd proj add-destination development ${DEV_CLUSTER_URL} ${DEV_NAMESPACE}"
-pe "./argocd proj add-destination development ${DEV_CLUSTER_URL} ${DEV_DATA_NAMESPACE}"
+pe "argocd cluster add `kubectx -c`"
+pe "argocd proj create development"
+pe "argocd proj add-source development https://github.com/mshahat/tanzu-demo"
+pe "argocd proj add-source development https://github.com/mshahat/tanzu-demo-gitops"
+pe "argocd proj add-source development https://charts.bitnami.com/bitnami"
+pe "argocd proj add-destination development ${DEV_CLUSTER_URL} ${DEV_NAMESPACE}"
+pe "argocd proj add-destination development ${DEV_CLUSTER_URL} ${DEV_DATA_NAMESPACE}"
 
-echo ''
-echo 'Continue to add the PROD_CLUSTER to the ArgoCD cluster configuration...'
-pe "kubectx ${PROD_CLUSTER}"
-pe "./argocd cluster add `kubectx -c`"
-pe "./argocd proj create production"
-pe "./argocd proj add-source production https://github.com/Turbots/tanzu-demo"
-pe "./argocd proj add-source production https://github.com/Turbots/tanzu-demo-gitops"
-pe "./argocd proj add-source production https://charts.bitnami.com/bitnami"
-pe "./argocd proj add-destination production ${PROD_CLUSTER_URL} ${PROD_NAMESPACE}"
-pe "./argocd proj add-destination production ${PROD_CLUSTER_URL} ${PROD_DATA_NAMESPACE}"
 
 echo '----------------------------------------------'
 echo '      ArgoCD configured successfully!'

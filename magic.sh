@@ -80,13 +80,6 @@ function load_config() {
   DEV_REDIS_PASSWORD=`load_config_value ".dev.redis.password"`
   DEV_WAVEFRONT_TOKEN=`load_config_value ".dev.wavefront.token"`
 
-  PROD_CLUSTER=`load_config_value ".prod.kubectx"`
-  PROD_CLUSTER_URL=`load_config_value ".prod.url"`
-  PROD_NAMESPACE=`load_config_value ".prod.namespace"`
-  PROD_DATA_NAMESPACE=`load_config_value ".prod.data_namespace"`
-  PROD_RABBITMQ_PASSWORD=`load_config_value ".prod.rabbit.password"`
-  PROD_REDIS_PASSWORD=`load_config_value ".prod.redis.password"`
-  PROD_WAVEFRONT_TOKEN=`load_config_value ".prod.wavefront.token"`
 }
 
 function load_config_value() {

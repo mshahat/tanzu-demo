@@ -13,7 +13,7 @@ spec:
   cacheSize: "2Gi"
   source:
     git:
-      url: https://github.com/Turbots/php-symfony-demo.git
+      url: https://github.com/mshahat/php-symfony-demo.git
       revision: master
   build:
     env:

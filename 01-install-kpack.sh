@@ -14,7 +14,7 @@ pe "kubectx ${CICD_CLUSTER}"
 
 echo ''
 echo 'Continue to install kpack...'
-pe "kubectl apply -n kpack -f kubernetes/cicd/kpack/01-kpack-release-0.0.8.yml"
+pe "kubectl apply -n kpack -f kubernetes/cicd/kpack/01-kpack-release-0.2.0.yml"
 
 echo 'Continue to set the Github and Docker secrets...'
 wait

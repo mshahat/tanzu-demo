@@ -4,7 +4,7 @@ metadata:
   name: symfony-demo-app
   namespace: kpack
 spec:
-  tag: dhubau/symfony-demo-app
+  tag: mshahat/symfony-demo-app
   serviceAccount: kpack-service-account
   successBuildHistoryLimit: 2
   builder:

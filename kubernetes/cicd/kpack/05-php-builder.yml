@@ -14,7 +14,7 @@ metadata:
   name: php-builder
   namespace: kpack
 spec:
-  tag: dhubau/kpack-php-builder
+  tag: mshahat/kpack-php-builder
   serviceAccount: kpack-service-account
   stack: linux-stack
   store: php-store

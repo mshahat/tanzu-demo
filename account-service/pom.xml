@@ -98,7 +98,7 @@
                 <version>${project.parent.version}</version>
                 <configuration>
                     <image>
-                        <name>docker.io/dhubau/tanzu-account-service</name>
+                        <name>docker.io/mshahat/tanzu-account-service</name>
                     </image>
                     <layers>
                         <enabled>true</enabled>
